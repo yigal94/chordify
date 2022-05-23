@@ -6,6 +6,8 @@ import NotePlayer from './Sounds';
 import { chordToFrequencies } from './Theory';
 import ChordPalette from './components/ChordPalette';
 import Loop from './components/Loop';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 let actx = new AudioContext();
 let totalGain = actx.createGain();
@@ -60,7 +62,7 @@ function App() {
   }
 
   return (
-    <>
+    <DndProvider backend={HTML5Backend}>
       <div className="header">
         <h1>Chordify!</h1>
       </div>
@@ -85,7 +87,7 @@ function App() {
           <Loop chords={chords} player={player} />
         </div>
       </div>
-    </>
+    </DndProvider>
   );
 }
 

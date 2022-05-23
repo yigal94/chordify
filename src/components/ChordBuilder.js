@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { chordToFrequencies } from '../Theory'
 import { faFloppyDisk, faPlus, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import _ from 'lodash';
 
 const ChordBuilder = ({ player, addChord, editedChord, saveChord }) => {
   const [root, setRoot] = useState("C")
